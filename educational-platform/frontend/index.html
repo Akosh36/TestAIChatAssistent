@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational AI Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎓 EduAssist</h1>
+                <nav class="nav">
+                    <div class="language-selector">
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="uz">UZ</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                    </div>
+                    <button class="auth-btn" id="authBtn">Sign In</button>
+                    <div id="userInfo" class="user-info" style="display: none;">
+                        <span id="userEmail"></span>
+                        <button id="logoutBtn" class="logout-btn">Logout</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h2 id="welcomeTitle">Welcome to EduAssist</h2>
+                <p id="welcomeSubtitle">Learn with AI assistance in your preferred language</p>
+            </section>
+
+            <!-- Sections grid -->
+            <div class="sections-grid" id="sectionsGrid">
+                <!-- Sections will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Section content area -->
+            <section class="section-content" id="sectionContent" style="display: none;">
+                <div class="section-header">
+                    <button class="back-btn" id="backBtn">← Back</button>
+                    <h2 id="sectionTitle"></h2>
+                </div>
+                <div class="articles-list" id="articlesList"></div>
+            </section>
+
+            <!-- Article detail view -->
+            <article class="article-detail" id="articleDetail" style="display: none;">
+                <div class="article-header">
+                    <button class="back-btn" id="backFromArticleBtn">← Back</button>
+                    <button class="bookmark-btn" id="bookmarkBtn">🔖 Bookmark</button>
+                </div>
+                <h1 id="articleTitle"></h1>
+                <div id="articleBody" class="article-body"></div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Chat widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chatToggle">💬</button>
+        <div class="chat-drawer" id="chatDrawer" style="display: none;">
+            <div class="chat-header">
+                <h3>AI Assistant 🤖</h3>
+                <div class="chat-language">
+                    <select id="chatLanguage">
+                        <option value="en">English</option>
+                        <option value="uz">Uzbek</option>
+                        <option value="ru">Russian</option>
+                    </select>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Ask a question...">
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth modal -->
+    <div class="modal" id="authModal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" id="closeAuthModal">&times;</button>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+
+            <!-- Login form -->
+            <form id="loginForm" class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+
+            <!-- Register form -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+                <div id="registerError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
